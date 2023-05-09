@@ -8,6 +8,12 @@
 
 
 def fib(limit):
+    if limit == 1:
+        return [1]
+
+    if limit == 2:
+        return [1, 1]
+
     fib_sequence = [1, 1]
 
     while fib_sequence[-1] + fib_sequence[-2] < limit:
@@ -28,4 +34,4 @@ def solve(limit):
 
 
 if __name__ == '__main__':
-    print(solve(4000000))
+    print(solve(3))
