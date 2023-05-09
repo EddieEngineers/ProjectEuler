@@ -74,7 +74,6 @@ def solve(grid):
 
     for x in range(0, grid_height):
         for y in range(0, grid_width):
-            print(f'Trying {x}, {y}')
             max_product = find_products(grid, x, y)
             if max_product > largest_product:
                 largest_product = max_product
