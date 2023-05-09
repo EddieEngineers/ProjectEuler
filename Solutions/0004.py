@@ -10,24 +10,16 @@ def is_palindrome(value):
 
 
 def solve():
-    a = 100
-    b = 100
     largest_palindrome = 0
 
-    while a < 1000:
-        while b < 1000:
-            print(f'{a} * {b}')
-            product = a * b
+    for x in range(100, 1000):
+        for y in range(100, 1000):
+            product = x * y
             if is_palindrome(product) and product > largest_palindrome:
                 largest_palindrome = product
-
-            b += 1
-        a += 1
-        b = 100
 
     return largest_palindrome
 
 
 if __name__ == '__main__':
-    print(is_palindrome(100001))
     print(solve())
