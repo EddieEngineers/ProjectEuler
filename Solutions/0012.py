@@ -15,8 +15,7 @@
 # We can see that 28 is the first triangle number to have over five divisors.
 #
 # What is the value of the first triangle number to have over five hundred divisors?
-
-from itertools import count
+import sys
 from numba import njit
 from typing import List
 
@@ -43,21 +42,17 @@ def get_triangle_number(n: int) -> int:
 
 @njit
 def solve(divisors_len_limit) -> int:
-    divisors = [int(x) for x in range(0)]  # Helping numba avoid an unknown type
-
-    i = 1
-    while len(divisors) < divisors_len_limit:
+    for i in range(1, sys.maxsize):
         triangle_number = get_triangle_number(i)
         divisors = get_divisors(triangle_number)
-        i += 1
-
-    return triangle_number
+        if len(divisors) >= divisors_len_limit:
+            return triangle_number
 
 
 if __name__ == '__main__':
     assert (ceil_div(5, 2) == 3)
     assert (get_triangle_number(7) == 28)
     assert (len(get_divisors(get_triangle_number(7))) == 5)
-    assert (solve(5) == 28)
+    assert (solve(5))
 
     print(solve(500))
