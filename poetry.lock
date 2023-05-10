@@ -1,0 +1,37 @@
+[[package]]
+name = "llvmlite"
+version = "0.40.0"
+description = "lightweight wrapper around basic LLVM functionality"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "numba"
+version = "0.57.0"
+description = "compiling Python code using LLVM"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+llvmlite = ">=0.40.0dev0,<0.41"
+numpy = ">=1.21,<1.25"
+
+[[package]]
+name = "numpy"
+version = "1.24.3"
+description = "Fundamental package for array computing in Python"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.10"
+content-hash = "c35b70586023e8f845513b8925d3410b4596fcc0c7b4fc4f666f4d6bdc6683c0"
+
+[metadata.files]
+llvmlite = []
+numba = []
+numpy = []
